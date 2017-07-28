@@ -1,0 +1,20 @@
+{
+  "name": "vimanet-translator",
+  "description": "Vimanet electron demo",
+  "main": "src/index.ts",
+  "authors": [
+    "Brain85"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-side-navbar": "^1.0.1"
+  }
+}

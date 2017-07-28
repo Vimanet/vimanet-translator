@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <!--https://github.com/angular/angular/issues/13948-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-side-navbar/source/assets/stylesheets/navbar-fixed-side.css" />
+  <link rel="stylesheet" type="text/css" href="../../node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../../node_modules/angular2-toaster/toaster.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-square.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />  
+</head>
+
+<body>
+  <app-root>Loading...</app-root>
+</body>
+
+<script>
+  try {
+    window.exports = module.exports;
+    window.$ = window.jQuery = require('jquery');
+    require('bootstrap');
+    require('lodash');
+    require('block-ui');
+  } catch (error) {
+    var logger = require('electron').remote.getGlobal('shared').services.logger;
+    logger.error('index.html :: ' + JSON.stringify(error));
+  }
+</script>
+<script src="../../node_modules/zone.js/dist/zone.js"></script>
+<script src="../../node_modules/reflect-metadata/Reflect.js"></script>
+<script src="bootstrap.ts"></script>
+
+</html>

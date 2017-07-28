@@ -1,0 +1,41 @@
+<div class="page">
+
+  <div class="page-header">
+    <h1>HISTORY</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input *ngIf="config.filtering" placeholder="Filter all columns" [ngTableFiltering]="config.filtering" class="form-control"
+          (tableChanged)="onChangeTable(config)" />
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" tooltip="Export to CSV" container="body"
+                  (click)="exportToCsv()" [disabled]="!canExportToCsv()">
+              <span class="glyphicon glyphicon-export"></span>
+        </button>
+
+        <button class="btn btn-default" type="button" tooltip="Delete All" container="body"
+              (click)="deleteAll()" [disabled]="!canDeleteAll()">
+            <span class="glyphicon glyphicon-trash"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <ng-table [config]="config" (tableChanged)="onChangeTable(config)" (cellClicked)="onCellClick($event)" [rows]="rows" [columns]="columns">
+  </ng-table>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pagination-info-panel" *ngIf="config.paging && paginationInfo && data.length > 0">
+        {{paginationInfo.from}} - {{paginationInfo.to}} of {{paginationInfo.of}} items
+      </div>
+
+      <pagination *ngIf="config.paging" class="pagination-sm pull-right" [(ngModel)]="page" [totalItems]="length" [itemsPerPage]="itemsPerPage"
+        [maxSize]="maxSize" [boundaryLinks]="true" [rotate]="false" (pageChanged)="onChangeTable(config, $event)" (numPages)="numPages = $event">
+      </pagination>
+    </div>
+  </div>
+</div>

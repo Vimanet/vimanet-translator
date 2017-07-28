@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+.page-header{
+    margin:0px;
+    margin-bottom:5px;
+    padding:0px;
+}
+
+h1{
+    font-size:20px;
+}
+
+h2{
+    font-size:15px;
+}
+
+.navbar-toggle{
+    border-radius: 0px;
+    padding:9px 12px;
+}
+
+.alert-info{
+    padding:5px;
+    background-color: #e7e7e7;
+    border:0px;
+    border-left: 4px solid #2e6da4;
+}
+
+ul.navbar-nav li.active{
+    border-left: 4px solid #2e6da4;    
+}
+
+/*.ng-valid[required], .ng-valid.required  {
+  border-left: 4px solid #42A948; 
+}*/
+
+.ng-invalid:not(form):not(.no-validate)  {
+  border-left: 4px solid #a94442; 
+}
+
+#header-logo{
+    display: block;
+    width: auto;
+    max-height: 100%;    
+}
+
+label.required:after {
+    content: " *"; 
+    color: red;
+}
+
+label {
+    font-weight: normal;
+}
+
+ul.pagination {
+     margin:0px;
+}
+
+#page-container{
+    height:100vh;
+}
+
+/* page transition : start */
+.page {
+    animation-duration: .8s;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    transition: transform .8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+/* page transition : end */
+
+.table-striped tbody tr:nth-child(odd) {
+   background-color: #f0f0f0;
+}
+
+.btn-icon{
+    border-radius: 0;
+    background: transparent;
+    padding:2px 4px;
+}
+
+a.navbar-brand:focus{
+    outline: 0;
+}

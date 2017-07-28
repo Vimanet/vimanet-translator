@@ -1,0 +1,18 @@
+<div class="page">
+  <div class="page-header">
+    <h1>ABOUT</h1>
+  </div>
+  <br />
+  <p>{{appName}} | version {{appVersion}}</p>
+  <p>Developed by Vimanet</p>
+  <hr />
+  <button type="button" 
+          class="btn btn-default" 
+          *ngIf="canOpenHomePage()" 
+          (click)="openHomePage()">Open homepage</button>
+  <button type="button" 
+          class="btn btn-default" 
+          *ngIf="canShowLogs()"           
+          (click)="showLogs()">View log</button> &nbsp;&nbsp;          
+  <hr *ngIf="canOpenHomePage() || canShowLogs()" />
+</div>

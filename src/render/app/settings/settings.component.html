@@ -1,0 +1,53 @@
+<div class="page">
+
+  <div class="page-header">
+    <h1>SETTINGS</h1>
+  </div>
+
+  <form class="form-horizontal" action="" novalidate (submit)="save(settingsForm.valid)" #settingsForm="ngForm">
+
+    <h2>GENERAL</h2>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="autoLaunch">Start on system startup</label>
+      <div class="col-sm-8">
+        <custom-switch name="autoLaunch" [(ngModel)]="appSettings.autoLaunch">
+        </custom-switch>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4 required" for="translateApiKey">Yandex translate API key</label>
+      <div class="col-sm-8">
+        <div class="input-group">
+          <input type="text" class="form-control" id="translateApiKey" required trim [(ngModel)]="appSettings.translateApiKey" name="translateApiKey"
+            #translateApiKey="ngModel">
+          <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="getApiKey()">Get API key</button>
+        </span>
+        </div>
+        <!--show error only when field is not valid & it's dirty or form submited-->
+        <small [hidden]="translateApiKey.valid || (translateApiKey.pristine && !settingsForm.submitted)" class="text-danger">
+            Field is required
+        </small>
+      </div>
+    </div>
+
+    <h2>KEYBOARD SHORTCUTS</h2>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="translateClipboardShortcut">Translate clipboard</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="translateClipboardShortcut" [(ngModel)]="appSettings.translateClipboardShortcut" name="translateClipboardShortcut">
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-8">
+        <button type="submit" class="btn btn-primary pull-right">Save</button>
+      </div>
+    </div>
+  </form>
+
+</div>
