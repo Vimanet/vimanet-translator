@@ -133,7 +133,7 @@ export class TranslatorComponent implements OnInit, OnDestroy {
     let win = new BrowserWindow({
       width: 800, height: 600,
       webPreferences: { nodeIntegration: false },
-      icon: remote.getGlobal('shared').settings.iconPath
+      icon: remote.getGlobal('shared').data.iconPath
     });
     win.loadURL(url);
   }
